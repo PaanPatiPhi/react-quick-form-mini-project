@@ -43,7 +43,6 @@ function MovieForm() {
     };
     setSubmittedData(newSubmittedData);
     setSubmitted(true);
-
   }
 
   function handleReset() {
@@ -97,7 +96,7 @@ function MovieForm() {
             <div className="input-container">
               {movies.map((item) => {
                 return (
-                  <label key ={item.title}>
+                  <label key={item.title}>
                     <input
                       type="radio"
                       value={item.title}
@@ -141,12 +140,18 @@ function MovieForm() {
   ) : (
     <div>
       <h2>ส่งแบบสำรวจสำเร็จ</h2>
-        <div>
-          <h3>ชื่อ: {submittedData.name}</h3>
-          <h3>อีเมล: {submittedData.email}</h3>
-          <h3>หนังที่เลือก: {submittedData.movie}</h3>
-          {submittedData.description && <h3>หนังที่เลือก: {submittedData.description}</h3>}
-        </div>
+      <div>
+        <h3>ชื่อ: {submittedData.name}</h3>
+        <h3>อีเมล: {submittedData.email}</h3>
+        <h3>หนังที่เลือก: {submittedData.movie}</h3>
+        {submittedData.description && (
+          <h3>
+            ความคิดเห็น:
+            <br />
+            {submittedData.description}
+          </h3>
+        )}
+      </div>
     </div>
   );
 }
