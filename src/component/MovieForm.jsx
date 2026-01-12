@@ -15,7 +15,7 @@ function MovieForm() {
     return emailPattern.test(email);
   }
 
-  function validateData() {
+  function validationData() {
     let newError = {};
     if (!name) {
       newError.name = "โปรดใส่ชื่อของคุณ";
@@ -26,15 +26,17 @@ function MovieForm() {
       newError.email = "กรุณากรอกอีเมลให้ถูกต้อง";
     }
     if (!movie) {
-      newError.movie = "กรุณาเลิอกหนังที่คุณชอบ";
+      newError.movie = "กรุณาเลือกหนังที่คุณชอบ";
     }
     setError(newError);
-    return Object.keys(error) === 0;
+    return Object.keys(newError).length === 0;
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    if (!validationData()) {
+      return;
+    }
     let newSubmittedData = {
       name: name,
       email: email,
@@ -51,6 +53,7 @@ function MovieForm() {
     setMovie("");
     setDescription("");
     setError({});
+    setSubmitted(false);
   }
 
   return !submitted ? (
@@ -134,7 +137,7 @@ function MovieForm() {
         <button type="button" onClick={handleReset}>
           รีเซ็ต
         </button>
-        <button>ส่งแบบสำรวจ</button>
+        <button type="submit">ส่งแบบสำรวจ</button>
       </form>
     </div>
   ) : (
@@ -151,6 +154,9 @@ function MovieForm() {
             {submittedData.description}
           </h3>
         )}
+        <button type="button" onClick={handleReset}>
+          ทำแบบสำรวจใหม่
+        </button>
       </div>
     </div>
   );
