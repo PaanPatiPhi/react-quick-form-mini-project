@@ -3,51 +3,126 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  box-sizing: border-box;
+  padding: auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title-bar{
+  background: linear-gradient(to right, #7e23d1 0%, #5046e5 100%);
+  padding:1rem 2rem;
+  text-align: left;
+  color: white;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.movie-survey-container{
+  width: 500px;
+  background-color: white;
+  padding-bottom: 36px;
+  box-shadow: 0px 5px 5px 5px rgb(235, 234, 234);
 }
 
 .input-container{
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-top: 24px;
+  padding:1rem 2rem;
 }
 
-.error-message{
+.input-bar{
+  width: stretch;
+  height: 40px;
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 5px;
+  margin: 10px 0px 0px 0px;
+  padding-left: 10px;
+}
+.input-bar :hover{
+  border: 1px solid black;
+}
+
+.description-area{
+  width: stretch;
+  border: 1px solid rgb(163, 163, 163);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.description-area :hover{
+  border: 1px solid black;
+}
+
+.error-message,
+.red-mark{
   color: red;
+}
+
+.movie-list{
+display: flex;
+flex-direction: column;
+margin-top: 12px;
+}
+
+.movie-item{
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  
+}
+.movie-item-detail p{
+  padding: 0;
+  margin: 12px;
+}
+
+.movie-director{
+  color: gray;
+}
+
+
+.error-stage{
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+h2{
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+h2.success-message{
+  color: #3d5532;
+}
+
+.success-box{
+padding: 16px;
+background: #f0fdf4;
+border: 2px solid #cfebdc;
+padding:1rem 2rem;
+margin: 0px 12px 0px 12px;
+display: flex;
+flex-direction: column;
+justify-content: start;
+align-items: start;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  row-gap: 12px;
+  column-gap: 16px;
+  align-items: start;
+}
+
+.label {
+  color: #7c7d80;
+  text-align: left;
+}
+
+.value {
+  color: #111827;
+  text-align: left;
+}
+.movie-value {
+  color: #a68dbf;
+  text-align: left;
 }
