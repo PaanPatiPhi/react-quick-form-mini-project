@@ -1,9 +1,9 @@
 import { useState } from "react";
 import movies from "../data/MovieData";
 import { Film } from "lucide-react";
-import { CircleCheckBig } from 'lucide-react';
-import { RefreshCcw } from 'lucide-react';
-import { Send } from 'lucide-react';
+import { CircleCheckBig } from "lucide-react";
+import { RefreshCcw } from "lucide-react";
+import { Send } from "lucide-react";
 
 function MovieForm() {
   const [name, setName] = useState("");
@@ -130,8 +130,12 @@ function MovieForm() {
                             checked={movie === item.title}
                           />
                           <div className="movie-item-detail">
-                          <p>{item.title} ({item.year})</p>
-                          <p className="movie-director">Director: {item.director}</p>
+                            <p>
+                              {item.title} ({item.year})
+                            </p>
+                            <p className="movie-director">
+                              Director: {item.director}
+                            </p>
                           </div>
                         </label>
                       );
@@ -159,18 +163,30 @@ function MovieForm() {
                   />
                 </label>
               </div>
-              <button type="button" onClick={handleReset} className="reset-button">
-                <RefreshCcw />รีเซ็ต
-              </button>
-              <button type="submit" className="send-button">
-                <Send />ส่งแบบสำรวจ
+              <hr></hr>
+              <div className="button-section">
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  className="reset-button"
+                >
+                  <RefreshCcw />
+                  รีเซ็ต
                 </button>
+                <button type="submit" className="send-button">
+                  <Send />
+                  ส่งแบบสำรวจ
+                </button>
+              </div>
             </form>
           </div>
         ) : (
           <div>
             <div className="success-box">
-              <h2 className="success-message"><CircleCheckBig />ส่งแบบสำรวจสำเร็จ</h2>
+              <h2 className="success-message">
+                <CircleCheckBig />
+                ส่งแบบสำรวจสำเร็จ!
+              </h2>
               <div className="result-grid">
                 <div className="label">ชื่อ:</div>
                 <div className="value">{submittedData.name}</div>
@@ -181,18 +197,22 @@ function MovieForm() {
                 <div className="label">หนังที่เลือก:</div>
                 <div className="movie-value">{submittedData.movie}</div>
               </div>
+              <hr></hr>
               <div>
                 {submittedData.description && (
-                  <p>
-                    ความคิดเห็น:
-                    <br />
+                  <div>
+                    <p className="label">ความคิดเห็น:</p>
                     {submittedData.description}
-                  </p>
+                  </div>
                 )}
               </div>
             </div>
-            <button type="button" onClick={handleReset}>
-              ทำแบบสำรวจใหม่
+            <button
+              type="button"
+              onClick={handleReset}
+              className="redo-form-button"
+            >
+              <RefreshCcw /> ทำแบบสำรวจใหม่
             </button>
           </div>
         )}
