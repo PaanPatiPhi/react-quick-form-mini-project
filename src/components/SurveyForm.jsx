@@ -59,7 +59,6 @@ function MovieFormInput({
         error={error.movie}
         stage={stage.movie}
       />
-      {error.movie && <p className="error-message">{error.movie}</p>}
       <div className="input-container">
         <label>
           ความคิดเห็นเกี่ยวกับหนัง

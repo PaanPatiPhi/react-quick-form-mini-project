@@ -20,6 +20,7 @@
   padding-bottom: 1px;
   box-shadow: 0px 5px 5px 5px rgb(235, 234, 234);
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .input-container{
@@ -66,12 +67,14 @@ margin-top: 12px;
 .movie-item{
   display: flex;
   justify-content: start;
-  gap: 20px;
   
+}
+.movie-item-detail{
+  margin: 10px 0px;
 }
 .movie-item-detail p{
   padding: 0;
-  margin: 12px;
+  margin: 0px 12px;
 }
 
 .movie-director{
@@ -90,6 +93,7 @@ margin-top: 12px;
   justify-content: space-between;
   padding: 16px 24px 24px ;
   margin: 10px;
+  border-top: 1px solid rgb(230, 229, 229);
 }
 
 .reset-button{
@@ -143,7 +147,7 @@ align-items: start;
 
 .result-grid {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 1fr 1fr;
   row-gap: 12px;
   column-gap: 16px;
   align-items: start;
@@ -162,6 +166,15 @@ align-items: start;
   color: #7e23d1;
   text-align: left;
 }
+
+.description-success{
+  border-top: 1px solid rgb(230, 229, 229);
+  padding-top: 10px;
+  margin: 20px 0px;
+  max-width: 100%;
+  width: 500px;
+}
+
 
 .redo-form-button{
   background: black;

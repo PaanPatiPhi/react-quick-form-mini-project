@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Film } from "lucide-react";
-import MovieFormInput from "./MovieFormInput";
+import MovieFormInput from "./SurveyForm";
 import MovieSuccess from "./MovieSuccess";
 
 function MovieForm() {
