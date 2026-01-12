@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import MovieForm from './component/MovieForm'
+import MovieForm from './components/MovieForm'
 import './App.css'
 
 
